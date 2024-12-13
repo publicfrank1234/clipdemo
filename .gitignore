@@ -1,0 +1,8 @@
+.venv
+__pycache__
+.vscode
+downloads
+export
+*.mp4
+.DS_Store
+downloader

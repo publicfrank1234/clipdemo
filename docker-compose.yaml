@@ -1,0 +1,16 @@
+version: "3.4"
+services:
+  weaviate:
+    image: semitechnologies/weaviate:latest
+    ports:
+      - "8080:8080"  # REST API
+      - "50051:50051"
+    environment:
+      - QUERY_DEFAULTS_LIMIT=20
+      - AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED=true
+      - PERSISTENCE_DATA_PATH=/var/lib/weaviate
+    volumes:
+      - weaviate-data:/var/lib/weaviate  # Mount volume for data persistence
+
+volumes:
+  weaviate-data:
